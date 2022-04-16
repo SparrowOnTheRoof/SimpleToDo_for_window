@@ -215,6 +215,23 @@ namespace SimpleToDo
 	  if (e.ChangedButton == MouseButton.Left)
 	      this.DragMove();
         }
+        private void btMenu_Click(object sender, RoutedEventArgs e)
+        {
+	  MenuWindow newWindow = new MenuWindow();
+
+	  if (storedCreatingWindows.Count == 0)
+	  {
+	      newWindow.Top = this.Top + (double)((this.Height - newWindow.Height) / 2);
+	      newWindow.Left = this.Left + (double)((this.Width - newWindow.Width) / 2);
+	  }
+	  else
+	  {
+	      newWindow.Top = storedCreatingWindows.Last().Top - 100;
+	      newWindow.Left = storedCreatingWindows.Last().Left - 100;
+	  }
+
+	  newWindow.Show();
+        }
         private void btClose_Click(object sender, RoutedEventArgs e)
         {
 	  WindowState = WindowState.Minimized;

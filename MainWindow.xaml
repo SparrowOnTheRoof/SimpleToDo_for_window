@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SimpleToDo"
         mc:Ignorable="d"
-        Height="600" Width="350" Background="Transparent" WindowStartupLocation="Manual" Title="SimpleToDo"
+        Height="600" Width="350" Background="Transparent" WindowStartupLocation="Manual" Title="SimpleToDo_v1.1"
         ResizeMode="CanResize" WindowStyle="None"  AllowsTransparency="True" Loaded="Window_Loaded"
         StateChanged="Window_StateChanged" KeyUp="Window_KeyUp" KeyDown="Window_KeyDown">
 
@@ -29,30 +29,35 @@
         <!--Top Bar-->
         <Grid Grid.Row="0" Background="Transparent">
 	  <Border Background="#3D5473" BorderThickness="0" CornerRadius="10 10 0 0" MouseDown="TopBar_MouseDown"/>
-	  <Button Name="btSetPos" Content="⇲" Background="Transparent" Margin="7 0 0 0"
+	  <Button Name="btMenu" Content="≡" Background="Transparent" Margin="7 1 0 0"
+		FontSize="18" FontFamily="/Fonts/#Roboto-Regular" FontWeight="Regular"
+		VerticalAlignment="Center" HorizontalAlignment="Left"
+		VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+		Width="25" Height="25" Style="{StaticResource CloseButton}" Click="btMenu_Click">
+	  </Button>
+	  <Button Name="btSetPos" Content="⇲" Background="Transparent" Margin="32 0 0 0"
 		FontSize="15" FontFamily="/Fonts/#Roboto-Regular" FontWeight="Regular"
 		VerticalAlignment="Center" HorizontalAlignment="Left"
 		VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
 		Width="25" Height="25" Style="{StaticResource CloseButton}" Click="btSetPos_Click"
 		ToolTip="reset position">
 	  </Button>
-	  <Button Name="btInfo" Margin="32 0 0 0"
+	  <TextBlock Name="txtDate" Text="00 - 00 - 0000 / ---" IsHitTestVisible="False"
+		   FontSize="14" FontFamily="/Fonts/#Roboto-Light" FontWeight="Light" Foreground="White"
+		   VerticalAlignment="Center" HorizontalAlignment="Center">
+	  </TextBlock>
+	  <Button Name="btInfo" Margin="0 0 32 0"
 		FontSize="15" FontFamily="/Fonts/#Roboto-Regular" FontWeight="Regular"
-		VerticalAlignment="Center" HorizontalAlignment="Left"
+		VerticalAlignment="Center" HorizontalAlignment="Right"
 		VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
 		Width="25" Height="25" Style="{StaticResource InfoButton}">
-	      <Image Source="/Icons/Info.png" Width="15">
-	      </Image>
+	      <Image Source="/Icons/Info.png" Width="15"/>
 	      <Button.ToolTip>
 		<ToolTip Content="Esc&#9;Minimize   &#x0a;Ctrl+X&#9;Close   &#x0a;T&#9;Add Task   &#x0a;M&#9;Add Memo   &#x0a;Ctrl+T&#9;Open Task   &#x0a;Ctrl+M&#9;Open Memo"
 		         Background="#3D5473" Foreground="White" BorderThickness="0"
 		         Placement="Bottom" VerticalOffset="5"/>
 	      </Button.ToolTip>
 	  </Button>
-	  <TextBlock Name="txtDate" Text="00 - 00 - 0000 / ---" IsHitTestVisible="False"
-		   FontSize="14" FontFamily="/Fonts/#Roboto-Light" FontWeight="Light" Foreground="White"
-		   VerticalAlignment="Center" HorizontalAlignment="Center">
-	  </TextBlock>
 	  <Button Name="btClose" Content="×" Background="Transparent" Margin="0 0 7 0"
 		FontSize="15" FontFamily="/Fonts/#Roboto-Regular" FontWeight="Regular"
 		VerticalAlignment="Center" HorizontalAlignment="Right"

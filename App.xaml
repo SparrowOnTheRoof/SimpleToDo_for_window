@@ -110,5 +110,24 @@
 	  </Style.Triggers>
         </Style>
 
+        <Style x:Key="MenuButton" TargetType="Button">
+	  <Setter Property="Background" Value="#DCE6F2"/>
+	  <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+	  <Setter Property="Template">
+	      <Setter.Value>
+		<ControlTemplate TargetType="Button">
+		    <Border Background="{TemplateBinding Background}" CornerRadius="10" BorderThickness="0">
+		        <ContentPresenter Margin="{TemplateBinding Padding}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+		    </Border>
+		</ControlTemplate>
+	      </Setter.Value>
+	  </Setter>
+	  <Style.Triggers>
+	      <Trigger Property="IsMouseOver" Value="True">
+		<Setter Property="Background" Value="#6387A6"/>
+	      </Trigger>
+	  </Style.Triggers>
+        </Style>
+
     </Application.Resources>
 </Application>
